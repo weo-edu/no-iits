@@ -1,0 +1,24 @@
+{
+  "name": "no-iits",
+  "version": "0.0.0",
+  "description": "Scan a glob pattern for iit/it.only/describe.only/etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "noiit": "./bin/noiit"
+  },
+  "keywords": [
+    "iit",
+    "it.only",
+    "describe.only"
+  ],
+  "author": "ashaffer",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^0.6.2",
+    "glob": "^4.0.2"
+  },
+  "devDependencies": {}
+}
