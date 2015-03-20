@@ -29,6 +29,8 @@ module.exports = function(patterns) {
   var files = patterns.reduce(function(memo, pattern) {
     return memo.concat(glob.sync(pattern));
   }, []);
-
+  files.forEach(function(file) {
+    console.log(file);
+  })
   return files.map(read).map(validate);
 };
