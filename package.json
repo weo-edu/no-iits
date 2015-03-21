@@ -1,8 +1,12 @@
 {
   "name": "no-iits",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "Scan a glob pattern for iit/it.only/describe.only/etc",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:weo-edu/no-iits.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
