@@ -13,6 +13,7 @@ var patterns = args.slice(1);
 if(! patterns.length)
   patterns = ['test/*.js'];
 
+console.log('patterns', patterns);
 var res = noiit(patterns);
 var valid = res.every(function(file) {
   return ! file.invalid;
