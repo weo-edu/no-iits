@@ -4,8 +4,9 @@ var noiit = require('../');
 
 // Normalize arguments in case we're started with node noiit as opposed to just noiit
 var args = process.argv;
-console.log('args', args);
 if(args[0] === 'node')
+  args.shift();
+else if (args[0].indexOf('iojs') >= 0)
   args.shift();
 
 var patterns = args.slice(1);
@@ -14,7 +15,6 @@ var patterns = args.slice(1);
 if(! patterns.length)
   patterns = ['test/*.js'];
 
-console.log('patterns', patterns);
 var res = noiit(patterns);
 var valid = res.every(function(file) {
   return ! file.invalid;
