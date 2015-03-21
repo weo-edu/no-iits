@@ -4,6 +4,7 @@ var noiit = require('../');
 
 // Normalize arguments in case we're started with node noiit as opposed to just noiit
 var args = process.argv;
+console.log('args', args);
 if(args[0] === 'node')
   args.shift();
 
