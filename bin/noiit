@@ -1,34 +1,30 @@
 #!/usr/bin/env node
-require('colors');
-var noiit = require('../');
+
+require('colors')
+var noiit = require('..')
 
 // Normalize arguments in case we're started with node noiit as opposed to just noiit
-var args = process.argv;
-if(args[0] === 'node')
-  args.shift();
-else if (args[0].indexOf('iojs') >= 0)
-  args.shift();
-
-var patterns = args.slice(1);
+var args = process.argv
+var patterns = args.slice(2)
 
 // Default to the same test folder pattern as mocha
 if(! patterns.length)
-  patterns = ['test/*.js'];
+  patterns = ['test/*.js']
 
-var res = noiit(patterns);
+var res = noiit(patterns)
 var valid = res.every(function(file) {
-  return ! file.invalid;
-});
+  return ! file.invalid
+})
 
 if(! valid) {
   res.forEach(function(file) {
     if(file.invalid) {
       Object.keys(file.invalid).forEach(function(key) {
-        console.log('%s found in %s'.red, key, file.path);
-      });
+        console.log('%s found in %s'.red, key, file.path)
+      })
     }
-  });
+  })
 } else
-  console.log('no iits detected'.green);
+  console.log('no iits detected'.green)
 
-process.exit(valid ? 0 : 1);
+process.exit(valid ? 0 : 1)
